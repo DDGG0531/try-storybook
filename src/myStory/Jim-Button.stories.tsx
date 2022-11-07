@@ -11,9 +11,13 @@ const Template: ComponentStory<typeof JimButton> = (args) => (
 );
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  hasBorder: true,
+  hasShadow: true,
   isLarge: true,
-  isRounded: true,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  hasShadow: false,
+  isLarge: false,
 };

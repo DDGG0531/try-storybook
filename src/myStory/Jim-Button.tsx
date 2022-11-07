@@ -1,20 +1,16 @@
+import classNames from "classnames";
+
 interface Props {
   isLarge?: boolean;
-  isRounded?: boolean;
-  hasBorder?: boolean;
+  hasShadow?: boolean;
 }
 
 export default function JimButton(props: Props) {
-  return (
-    <div
-      style={{
-        background: "yellow",
-        width: props.isLarge ? "300px" : "200px",
-        borderRadius: props.isRounded ? "10px" : "0px",
-        border: props.hasBorder ? "solid black 1px" : "none",
-      }}
-    >
-      Jim-Button
-    </div>
-  );
+  const baseStyle = "rounded border bg-white p-3";
+  const extraStyle = [
+    props.hasShadow ? "shadow" : "",
+    props.isLarge ? "text-3xl" : "text-normal",
+  ];
+
+  return <div className={classNames(baseStyle, extraStyle)}>Jim-Button</div>;
 }
