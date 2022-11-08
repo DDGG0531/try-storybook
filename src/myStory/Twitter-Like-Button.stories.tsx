@@ -6,8 +6,16 @@ export default {
   component: TwitterLikeButton,
 } as ComponentMeta<typeof TwitterLikeButton>;
 
-const Template: ComponentStory<typeof TwitterLikeButton> = () => (
-  <TwitterLikeButton />
+const Template: ComponentStory<typeof TwitterLikeButton> = (args) => (
+  <TwitterLikeButton {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Animate = Template.bind({});
+Animate.args = {
+  canAnimate: true,
+};
+
+export const NoAnimate = Template.bind({});
+NoAnimate.args = {
+  canAnimate: false,
+};

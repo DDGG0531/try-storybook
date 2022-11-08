@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "heart-burst": "heart-burst .8s steps(28) 1",
+        "heart-burst": "heart-burst 0.8s steps(28) 1 forwards",
+        "heart-burst-immediate": "heart-burst 0s steps(28) 1 forwards",
       },
       keyframes: {
         "heart-burst": {

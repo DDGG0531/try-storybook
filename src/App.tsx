@@ -24,7 +24,7 @@ function App() {
         <div className="">
           <JimButton />
           <ChakraButtonV2 />
-          <TwitterLikeButton />
+          <TwitterLikeButton canAnimate={true} />
         </div>
         <div className="card">
           <button onClick={() => setCount((count) => count + 1)}>
