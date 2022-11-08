@@ -1,4 +1,5 @@
 import "../src/index.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,3 +17,12 @@ export const parameters = {
     ],
   },
 };
+
+// preview.js => preview.jsx 不然會噴錯
+export const decorators = [
+  (Story) => (
+    <ChakraProvider>
+      <Story />
+    </ChakraProvider>
+  ),
+];

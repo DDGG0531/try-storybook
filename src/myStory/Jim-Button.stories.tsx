@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import JimButton from "./Jim-Button";
+import JimButton, { PrimaryProps, SecondaryProps } from "./Jim-Button";
 
 export default {
   title: "Jim/Button",
@@ -11,13 +11,7 @@ const Template: ComponentStory<typeof JimButton> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {
-  hasShadow: true,
-  isLarge: true,
-};
+Primary.args = PrimaryProps;
 
 export const Secondary = Template.bind({});
-Secondary.args = {
-  hasShadow: false,
-  isLarge: false,
-};
+Secondary.args = SecondaryProps;

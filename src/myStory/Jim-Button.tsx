@@ -12,5 +12,17 @@ export default function JimButton(props: Props) {
     props.isLarge ? "text-3xl" : "text-normal",
   ];
 
-  return <div className={classNames(baseStyle, extraStyle)}>Jim-Button</div>;
+  return (
+    <button className={classNames(baseStyle, extraStyle)}>Jim-Button</button>
+  );
 }
+
+export const PrimaryProps: Props = {
+  hasShadow: true,
+  isLarge: true,
+};
+
+export const SecondaryProps: Props = {
+  hasShadow: false,
+  isLarge: false,
+};
