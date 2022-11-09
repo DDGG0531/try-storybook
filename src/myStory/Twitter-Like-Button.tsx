@@ -6,22 +6,20 @@ interface Props {
 
 export default function TwitterLikeButton(props: Props) {
   const { canAnimate = true } = props;
-
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [active, setActive] = useState(false);
 
   const animateClass = (() => {
     if (canAnimate) {
-      return isAnimating ? "animate-heart-burst" : "";
+      return active ? "animate-heart-burst" : "";
     } else {
-      return isAnimating ? "animate-heart-burst-immediate" : "";
+      return active ? "animate-heart-burst-immediate" : "";
     }
   })();
 
   return (
     <div
       className={animateClass}
-      onClick={() => setIsAnimating(true)}
-      // onAnimationEnd={() => setIsAnimating(false)}
+      onClick={() => setActive((v) => !v)}
       style={{
         cursor: "pointer",
         height: "50px",
